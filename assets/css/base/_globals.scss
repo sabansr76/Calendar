@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-fluid{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../../public/images/MapChart.png')
+    // @include background-image(url('MapChart.png'), repeat, contain);
+}
+
+.sidebar{
+    border: 1px solid black; 
+    padding: 20px;    
+}
+
+
+.content .card .clock{
+    font-size: calc(1.325rem + .9vw);    
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+}
+
+.content .card .clock .number{
+    max-width: 50px;
+    min-width: 50px;
+    background-color: $clock;
+    
+}
+
+.content{
+    @include flex(column, center, flex-start, nowrap, 4px);
+    @include padding(20px);
+}
+
+.title{
+    @include border(1px, solid, #222423, 4px);
+}
+
+.card{
+    @include flex(row, space-between, end, nowrap, 0);
+    @include border(0);
+}
+
+.date {
+    @include flex(row, space-between, end, nowrap, 0);
+    @include border(1px, solid, #222423, 4px);
+    @include padding(20px);
+}
+
+.button-group{
+    @include flex(row, space-between, stretch, nowrap, 0);   
+}
+
+.btn{
+    @include padding(16px, 20px, 16px, 200px);
+}

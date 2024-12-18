@@ -1,0 +1,61 @@
+@mixin font-style($family: 'Pinar', $size: 16px, $weight: normal, $color: #fff, $line-height: 1.5) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    line-height: $line-height;
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    gap: $gap;
+}
+
+@mixin border($width: 1px, $type: solid, $color: #000, $radius: 0) {
+    @if $width == 0 {
+        border: 0;
+      } @else {
+        border: $width $type $color; 
+        border-radius: $radius;
+      }
+}
+
+@mixin padding($padding...) {
+    @if length($padding) == 1 {
+      padding: nth($padding, 1); // یک مقدار برای همه جهات
+    } @else if length($padding) == 2 {
+      padding: nth($padding, 1) nth($padding, 2); // عمودی و افقی
+    } @else if length($padding) == 3 {
+      padding: nth($padding, 1) nth($padding, 2) nth($padding, 3); // بالا، افقی، پایین
+    } @else if length($padding) == 4 {
+      padding: nth($padding, 1) nth($padding, 2) nth($padding, 3) nth($padding, 4); // بالا، راست، پایین، چپ
+    } @else {
+      padding: 0; // پیش‌فرض
+    }
+}
+
+@mixin bg-color($color) {
+    background-color: $color;
+}
+
+@mixin background-image($image-path, $repeat: no-repeat, $size: cover) {
+    background-image: url($image-path);
+    background-repeat: $repeat;
+    background-size: $size;
+}
+
+@mixin set-width($width, $min-width: null, $max-width: null) {
+    width: $width;
+    
+    @if $min-width != null {
+      min-width: $min-width;
+    }
+    
+    @if $max-width != null {
+      max-width: $max-width;
+    }
+}

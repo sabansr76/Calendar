@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Pinar';
+    src: url('../../../public/fonts/Pinar@editorclub.ttf') format('ttf');
+}
+
+
+.text-normal {
+    @include font-style('Pinar', 21.1px, 400, #fff, 1.5);
+}
+
+.text-medium {
+    @include font-style('Pinar', 20px, 500, #fff, 1.5);
+}
+
+.text-semi-bold {
+    @include font-style('Pinar', 19.25px, 600, #fff, 1.5);
+}
+
+.text-bold {
+    @include font-style('Pinar', 24.8px, 700, #fff, 1.5);
+}
+
+.text-extra-bold {
+    @include font-style('Pinar', 24.8px, 800, #fff, 1.5);
+}
+
+
