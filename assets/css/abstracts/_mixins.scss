@@ -24,6 +24,13 @@
       }
 }
 
+@mixin border-gradient($width, $gradient, $radius: 0) {
+  border: $width solid transparent;
+  border-radius: $radius;
+  border-image: $gradient;
+  background-clip: border-box;
+}
+
 @mixin padding($padding...) {
     @if length($padding) == 1 {
       padding: nth($padding, 1); // یک مقدار برای همه جهات
@@ -38,10 +45,6 @@
     }
 }
 
-@mixin bg-color($color) {
-    background-color: $color;
-}
-
 @mixin background-image($image-path, $repeat: no-repeat, $size: cover) {
     background-image: url($image-path);
     background-repeat: $repeat;
@@ -49,13 +52,26 @@
 }
 
 @mixin set-width($width, $min-width: null, $max-width: null) {
-    width: $width;
-    
+    width: $width;    
     @if $min-width != null {
       min-width: $min-width;
-    }
-    
+    }    
     @if $max-width != null {
       max-width: $max-width;
     }
+}
+
+@mixin link-style($color, $hover-color: darken($color, 10%), $text-decoration: none) {
+  color: $color;
+  text-decoration: $text-decoration;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+
+  &:hover {
+    color: $hover-color;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: lighten($color, 10%);
+  }
 }
