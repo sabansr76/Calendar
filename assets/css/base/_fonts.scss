@@ -1,27 +1,21 @@
 @font-face {
     font-family: 'YekanBakh';
-    src: url('../../../public/fonts/Pinar@editorclub.ttf') format('ttf');
+    src: url('../../../public/fonts/YekanBakh/YekanBakhFaNum04Regular.ttf') format('ttf'),
+        url('../../../public/fonts/YekanBakh/YekanBakhFaNum05Medium.ttf') format('ttf'),
+        url('../../../public/fonts/YekanBakh/YekanBakhFaNum06Bold.ttf') format('ttf'),
+        url('../../../public/fonts/YekanBakh/YekanBakhFaNum07Heavy.ttf') format('ttf'),
+        url('../../../public/fonts/YekanBakh/YekanBakhFaNum08Fat.ttf') format('ttf');    
 }
 
+$primary-font: 'YekanBakh';
 
-.text-normal {
-    @include font-style('Pinar', 21.1px, 400, #fff, 1.5);
-}
+$fs-small: 19px;
+$fs-medium: 20px;
+$fs-large: 21px;
+$fs-xlarge: 24px;
 
-.text-medium {
-    @include font-style('Pinar', 20px, 500, #fff, 1.5);
-}
-
-.text-semi-bold {
-    @include font-style('Pinar', 19.25px, 600, #fff, 1.5);
-}
-
-.text-bold {
-    @include font-style('Pinar', 24.8px, 700, #fff, 1.5);
-}
-
-.text-extra-bold {
-    @include font-style('Pinar', 24.8px, 800, #fff, 1.5);
-}
-
-
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+$fw-extra-bold: 800;

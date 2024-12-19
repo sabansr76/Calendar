@@ -1,4 +1,4 @@
-@mixin font-style($family: 'Pinar', $size: 16px, $weight: normal, $color: #fff, $line-height: 1.5) {
+@mixin font-style($family: 'YekanBakh', $size: 16px, $weight: normal, $color: #fff, $line-height: 1.5) {
     font-family: $family;
     font-size: $size;
     font-weight: $weight;
@@ -22,13 +22,6 @@
         border: $width $type $color; 
         border-radius: $radius;
       }
-}
-
-@mixin border-gradient($width, $gradient, $radius: 0) {
-  border: $width solid transparent;
-  border-radius: $radius;
-  border-image: $gradient;
-  background-clip: border-box;
 }
 
 @mixin padding($padding...) {
