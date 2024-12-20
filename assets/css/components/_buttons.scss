@@ -1,1 +1,20 @@
+.button-group{
+    width: 100%;
+    @include flex(row, space-between, stretch, nowrap, 0);     
+}
 
+.button-before .btn{
+    @include padding(1rem, 6rem);
+    background: $gradient-left;
+    @include font-style('YekanBakh', 22px, 800, $primary, 1.5);
+    border: 1px solid; 
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;  
+}
+
+.button-after .btn{
+    @include padding(1rem, 6rem);
+    background: $gradient-right;
+    @include font-style('YekanBakh', 22px, 800, $primary, 1.5);
+    border: 1px solid; 
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0)) 1;  
+}

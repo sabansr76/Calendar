@@ -1,0 +1,38 @@
+.form-label{
+    @include font-style('YekanBakh', 19px, 700, $text-white, 1.5);
+}
+
+.form-control{
+    background: $gradient-left;
+    border: 1px solid; 
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;  
+    padding: 0.7rem; 
+    @include font-style('YekanBakh', 16px, 500, $text-gray, 1.5);
+    @include responsive-font(16px, 18px, 100vw);   
+}
+
+.input-group-text{
+    @include border(0);
+    background-color: transparent;
+    color: $text-white;
+}
+
+.form-control::placeholder { 
+    color: $text-gray;
+    @include font-style('YekanBakh', 16px, 500, $text-gray, 1.5);
+    @include responsive-font(14px, 16px, 100vw);
+}
+
+.calculator{
+    @include flex(row, end, end, nowrap, 0);
+    background-color: $primary;
+    margin-top: 1rem;
+    border: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.calculator:hover{
+    background-color: $primary;
+    opacity: 0.8;
+}

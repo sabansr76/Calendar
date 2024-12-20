@@ -1,18 +1,22 @@
-@mixin font-style($family: 'YekanBakh', $size: 16px, $weight: normal, $color: #fff, $line-height: 1.5) {
-    font-family: $family;
-    font-size: $size;
-    font-weight: $weight;
-    color: $color;
-    line-height: $line-height;
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
 }
 
-@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $gap: 0) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-    flex-wrap: $wrap;
-    gap: $gap;
+@mixin font-style($family: 'YekanBakh', $size: 16px, $weight: normal, $color: #fff, $line-height: 1.5) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: $line-height;
+}
+
+@mixin responsive-font($min, $max, $viewport) {
+  font-size: clamp($min, $viewport / 20, $max);
 }
 
 @mixin border($width: 1px, $type: solid, $color: #000, $radius: 0) {
@@ -66,5 +70,22 @@
 
   &:active {
     color: lighten($color, 10%);
+    background-color: $primary;
   }
 }
+
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 576px) { @content; }
+  } @else if $size == tablet-portrait-up {
+    @media (max-width: 768px) { @content; }
+  } @else if $size == tablet-landscape-up {
+    @media (max-width: 992px) { @content; }
+  } @else if $size == desktop-up {
+    @media (max-width: 1200px) { @content; }
+  } @else if $size == big-desktop-up {
+    @media (max-width: 1400px) { @content; }
+  }
+}
+
+

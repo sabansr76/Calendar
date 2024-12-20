@@ -1,0 +1,123 @@
+.sidebar{
+    width: fit-content;
+    height: 100%; 
+    background: $gradient-right;
+    @include flex(column, flex-start, flex-start, nowrap, 30px);
+    @include padding(20px); 
+    border: 1px solid ; 
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0)) 1; 
+    @include for-size(tablet-portrait-up) {    
+        display: none; 
+    } 
+}
+
+.sidebar .navbar-toggler{
+    @include for-size( big-desktop-up){
+        display: none;
+    } 
+    @include for-size(tablet-portrait-up){
+        display: inline-block;
+    }
+}
+
+.sidebar a{
+    @include link-style($text-gray,$hover-color: $text-white,$text-decoration: none)
+}
+
+.content{
+    @include flex(column, center, flex-start, nowrap, 10px);
+    @include padding(20px);
+}
+
+.title{    
+    background: $gradient-left;
+    border: 1px solid; 
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;  
+    padding: 0.7rem; 
+}
+
+h1{
+    @include font-style('YekanBakh', 16px, 700, $text-white, 1.5);
+    @include responsive-font(16px, 19px, 100vw);
+}
+
+h5 {
+    @include responsive-font(14px, 20px, 100vw);
+}
+
+p {
+    @include responsive-font(14px, 20px, 100vw);
+}
+
+.card{
+    @include flex(row, space-between, end, nowrap, 0);
+    @include border(0);
+    background-color: transparent;
+}
+
+.card .card-title{
+    @include font-style('YekanBakh', 24px, 800, $primary, 1.5);
+}
+
+.card .card-text{
+    @include font-style('YekanBakh', 19px, 400, $text-white, 1.5);
+}
+
+.card .clock{
+    font-size: calc(1.325rem + .9vw);     
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    @include font-style('YekanBakh', 24px, 800, $text-white, 1.5);
+    @include responsive-font(22px, 24px, 100vw); 
+}
+
+.card .number{
+    display: inline-block;
+    max-width: 40px;
+    min-width: 40px;  
+    text-align: center;  
+    background: $bg-clock;
+    @include font-style('YekanBakh', 24px, 800, $primary, 1.5);
+    @include responsive-font(24px, 30px, 100vw);
+}
+
+.content .date {
+    @include flex(row, space-between, end, nowrap, 0);
+    @include padding(20px);
+    @include font-style('YekanBakh', 20px, 700, $text-white, 1.5);        
+}
+
+.date .number{
+    @include font-style('YekanBakh', 20px, 700, $primary, 1.5);
+}
+
+.content .solar,.gregorian{
+    background: $gradient-left;
+    border: 1px solid; 
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;     
+}
+
+.lunar{
+    background: $gradient-right;
+    border: 1px solid; 
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0)) 1;    
+}
+
+// discount
+
+.title-contain{
+    background: $gradient-left;
+    border: 1px solid; 
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;  
+    padding: 0.7rem; 
+    @include flex(row, space-between, stretch, nowrap, 0);
+}
+
+.title-contain .box-title{
+    color: $text-white;
+    @include font-style('YekanBakh', 19px, 600, $text-white, 1.5);
+}
+
+.title-contain .box-number{
+    color: $text-white;
+    @include font-style('YekanBakh', 24px, 700, $text-white, 1.5);
+}
