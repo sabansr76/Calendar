@@ -34,6 +34,7 @@
     border: 1px solid; 
     border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;  
     padding: 0.7rem; 
+    @include flex(row, space-between, flex-start, nowrap, 10px);
 }
 
 h1{
@@ -50,7 +51,7 @@ p {
 }
 
 .card{
-    @include flex(row, space-between, end, nowrap, 0);
+    @include flex(row, space-between, stretch, nowrap, 0);
     @include border(0);
     background-color: transparent;
 }
