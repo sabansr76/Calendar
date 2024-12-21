@@ -2,13 +2,26 @@
     width: fit-content;
     height: 100%; 
     background: $gradient-right;
-    @include flex(column, flex-start, flex-start, nowrap, 30px);
-    @include padding(20px); 
-    border: 1px solid ; 
-    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0)) 1; 
+    padding: 20px; 
+    @include border-image(linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)), 1, 1px);
     @include for-size(tablet-portrait-up) {    
         display: none; 
     } 
+}
+
+ul{
+    @include flex(column, flex-start, flex-start, nowrap, 40px);
+    padding: 40px 0 0 0;
+    list-style: none;
+}
+
+li{
+    @include link-style($text-gray,$hover-color: $text-white,$text-decoration: none);
+    width: 100%;
+}
+
+a{
+    @include link-style($text-gray,$hover-color: $text-white,$text-decoration: none);
 }
 
 .sidebar .navbar-toggler{
@@ -20,26 +33,24 @@
     }
 }
 
-.sidebar a{
-    @include link-style($text-gray,$hover-color: $text-white,$text-decoration: none)
-}
+
 
 .content{
     @include flex(column, center, flex-start, nowrap, 10px);
-    @include padding(20px);
+    padding: 20px;
 }
 
 .title{    
     background: $gradient-left;
-    border: 1px solid; 
-    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;  
+    border: 1px solid;   
     padding: 0.7rem; 
     @include flex(row, space-between, flex-start, nowrap, 10px);
+    @include border-image(linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)), 1, 1px);
 }
 
 h1{
     @include font-style('YekanBakh', 16px, 700, $text-white, 1.5);
-    @include responsive-font(16px, 19px, 100vw);
+    @include responsive-font(15px, 18px, 100vw);
 }
 
 h5 {
@@ -58,10 +69,12 @@ p {
 
 .card .card-title{
     @include font-style('YekanBakh', 24px, 800, $primary, 1.5);
+    @include responsive-font(21px, 24px, 100vw);
 }
 
 .card .card-text{
     @include font-style('YekanBakh', 19px, 400, $text-white, 1.5);
+    @include responsive-font(16px, 19px, 100vw);
 }
 
 .card .clock{
@@ -83,8 +96,8 @@ p {
 
 .content .date {
     @include flex(row, space-between, end, nowrap, 0);
-    @include padding(20px);
-    @include font-style('YekanBakh', 20px, 700, $text-white, 1.5);        
+    @include font-style('YekanBakh', 20px, 700, $text-white, 1.5);
+    padding: 20px;        
 }
 
 .date .number{
@@ -93,22 +106,19 @@ p {
 
 .content .solar,.gregorian{
     background: $gradient-left;
-    border: 1px solid; 
-    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;     
+    @include border-image(linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)), 1, 1px);    
 }
 
 .lunar{
     background: $gradient-right;
-    border: 1px solid; 
-    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0)) 1;    
+    @include border-image(linear-gradient(to right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0)), 1, 1px);   
 }
 
 // discount
 
 .title-contain{
     background: $gradient-left;
-    border: 1px solid; 
-    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;  
+    @include border-image(linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)), 1, 1px); 
     padding: 0.7rem; 
     @include flex(row, space-between, stretch, nowrap, 0);
 }
@@ -116,9 +126,11 @@ p {
 .title-contain .box-title{
     color: $text-white;
     @include font-style('YekanBakh', 19px, 600, $text-white, 1.5);
+    @include responsive-font(16px, 19px, 100vw);
 }
 
 .title-contain .box-number{
     color: $text-white;
     @include font-style('YekanBakh', 24px, 700, $text-white, 1.5);
+    @include responsive-font(21px, 24px, 100vw);
 }

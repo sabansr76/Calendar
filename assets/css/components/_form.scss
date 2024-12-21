@@ -1,11 +1,11 @@
 .form-label{
-    @include font-style('YekanBakh', 19px, 700, $text-white, 1.5);
+    @include font-style('YekanBakh', 18px, 700, $text-white, 1.5);
+    @include responsive-font(15px, 18px, 100vw);
 }
 
 .form-control{
     background: $gradient-left;
-    border: 1px solid; 
-    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;  
+    @include border-image(linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)), 1, 1px);
     padding: 0.7rem; 
     @include font-style('YekanBakh', 16px, 500, $text-gray, 1.5);
     @include responsive-font(16px, 18px, 100vw);   

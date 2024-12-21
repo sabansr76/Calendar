@@ -28,18 +28,13 @@
       }
 }
 
-@mixin padding($padding...) {
-    @if length($padding) == 1 {
-      padding: nth($padding, 1); // یک مقدار برای همه جهات
-    } @else if length($padding) == 2 {
-      padding: nth($padding, 1) nth($padding, 2); // عمودی و افقی
-    } @else if length($padding) == 3 {
-      padding: nth($padding, 1) nth($padding, 2) nth($padding, 3); // بالا، افقی، پایین
-    } @else if length($padding) == 4 {
-      padding: nth($padding, 1) nth($padding, 2) nth($padding, 3) nth($padding, 4); // بالا، راست، پایین، چپ
-    } @else {
-      padding: 0; // پیش‌فرض
-    }
+@mixin border-image($source, $slice: 1, $width: 1, $outset: 0, $repeat: stretch) {
+  border: $width solid transparent;
+  border-image-source: $source;
+  border-image-slice: $slice;
+  border-image-width: $width;
+  border-image-outset: $outset;
+  border-image-repeat: $repeat;
 }
 
 @mixin background-image($image-path, $repeat: no-repeat, $size: cover) {
@@ -65,12 +60,20 @@
 
   &:hover {
     color: $hover-color;
+    background-color: $primary;
     text-decoration: none;
   }
 
   &:active {
     color: lighten($color, 10%);
-    background-color: $primary;
+  }
+}
+
+@mixin no-text-decoration {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
   }
 }
 

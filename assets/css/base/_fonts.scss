@@ -1,21 +1,32 @@
 @font-face {
     font-family: 'YekanBakh';
-    src: url('../../../public/fonts/YekanBakh/YekanBakhFaNum04Regular.ttf') format('ttf'),
-        url('../../../public/fonts/YekanBakh/YekanBakhFaNum05Medium.ttf') format('ttf'),
-        url('../../../public/fonts/YekanBakh/YekanBakhFaNum06Bold.ttf') format('ttf'),
-        url('../../../public/fonts/YekanBakh/YekanBakhFaNum07Heavy.ttf') format('ttf'),
-        url('../../../public/fonts/YekanBakh/YekanBakhFaNum08Fat.ttf') format('ttf');    
+    src: url('../../../public/fonts/YekanBakh/YekanBakhFaNum04Regular.ttf');
+    font-weight: 400;    
 }
 
+@font-face {
+    font-family: 'YekanBakh';
+    src: url('../../../public/fonts/YekanBakh/YekanBakhFaNum05Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'YekanBakh';
+    src: url('../../../public/fonts/YekanBakh/YekanBakhFaNum06Bold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'YekanBakh';
+    src: url('../../../public/fonts/YekanBakh/YekanBakhFaNum07Heavy.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'YekanBakh';
+    src: url('../../../public/fonts/YekanBakh/YekanBakhFaNum08Fat.ttf');
+    font-weight: 800;
+}
+
+
 $primary-font: 'YekanBakh';
-
-$fs-small: 19px;
-$fs-medium: 20px;
-$fs-large: 21px;
-$fs-xlarge: 24px;
-
-$fw-regular: 400;
-$fw-medium: 500;
-$fw-semi-bold: 600;
-$fw-bold: 700;
-$fw-extra-bold: 800;

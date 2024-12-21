@@ -2,23 +2,32 @@
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-.button-group{
-    width: 100%;
+.my-buttons{       
     @include flex(row, space-between, stretch, nowrap, 0);     
 }
 
-.button-before .btn{
-    @include padding(1rem, 6rem);
+.btn{
+    flex: 1 1 0px;
+    border-radius: 0;
+}
+
+.btn:hover{
+    background: $primary;
+}
+
+.button-before {
     background: $gradient-left;
     @include font-style('YekanBakh', 22px, 800, $primary, 1.5);
     border: 1px solid; 
-    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;  
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.11)) 1;
+    text-align: start; 
 }
 
-.button-after .btn{
-    @include padding(1rem, 6rem);
+.button-after{
     background: $gradient-right;
     @include font-style('YekanBakh', 22px, 800, $primary, 1.5);
     border: 1px solid; 
-    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0)) 1;  
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0)) 1; 
+    text-align: end;
 }
+
